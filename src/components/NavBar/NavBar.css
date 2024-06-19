@@ -1,0 +1,57 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+/* ul{
+    display: flex;
+    gap: 2rem;
+    justify-content: right;
+    margin-right: 2rem;
+} */
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: grey;
+}
+
+.Name{
+    font-size: 3rem;
+    font-family: 'Great Vibes', cursive;
+}
+
+.navbar{
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    justify-content: right;
+    padding: 1rem;
+}
+
+.nav-item{
+    margin: 0px 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.nav-item a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item a::after{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0%;
+    background: black;
+}
+
+.nav-item a:hover::after{
+    width: 100%;
+    transition: width 0.3s ease-in;
+}
+
+.Name{
+    
+}

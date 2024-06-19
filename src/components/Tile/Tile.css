@@ -1,0 +1,46 @@
+/* *{
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.red{
+    background-color: red;
+}
+
+.tile{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 4rem 1rem;
+}
+
+.tile .img-parent{
+    flex-direction: row-reverse
+} */
+
+
+
+.tile{
+    padding: 2em;
+    display: flex;
+    justify-content: space-around;
+}
+.tile.img-right{
+    flex-direction: row-reverse;
+}
+.text-parent{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    /* padding: 10rem; */
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
