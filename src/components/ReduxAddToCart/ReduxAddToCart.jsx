@@ -1,22 +1,30 @@
-function AddToCart({product}){
-    const { cart, increaseQuantity, decreaseQuantity} = useContext(CartContext);
-    function increase(){
-        // increaseQuantity(product);
+import { useSelector, useDispatch } from "react-redux";
+function ReduxAddToCart({ product }) {
+    console.log("add to cart", product.id);
+    // useSelector
+    let dispatch = useDispatch();
+    function increase() {
+        //dispatch({type: , payload: })
+        dispatch({ type: "ADD_TO_CART", payload: product});
+    }
+    function decrease() {
+        //dispatch({type: , payload: })
+        dispatch({ type: "REMOVE_FROM_CART", payload: product});
     }
 
-    function decrease(){
-        // decreaseQuantity(product);
-    }
-    const quantity = cart[product.title] ? cart[product.title].quantity : 0;
-    if(quantity === 0){
-        return(
+    let quantity = useSelector((state) => {
+        return state.items[product.id]? state.items[product.id].quantity: 0;
+    }) 
+
+    // const quantity = cart[product.id] ? cart[product.id].quantity : 0;
+    if (quantity === 0) {
+        return (
             <div>
                 <button onClick={increase}>AddToCart</button>
             </div>
-        )
-    }
-    else{
-        return(
+     )  
+    } else {
+        return ( 
             <div>
                 <button onClick={decrease}>-</button>
                 <span>{quantity}</span>
@@ -25,5 +33,4 @@ function AddToCart({product}){
         )
     }
 }
-
-export default AddToCart;
+export default ReduxAddToCart;
