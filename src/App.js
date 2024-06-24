@@ -10,6 +10,7 @@ import Tile from './components/Tile/Tile.js';
 import Banner from './components/Banner/Banner.jsx';
 import ProgressBar from './components/ProgressBar/ProgressBar.js';
 import { useEffect, useState } from 'react';
+import CartContext from './context/CartContext.js';
 
 function App() {
   // console.log(a,b)
@@ -46,36 +47,12 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Products cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity}/> 
-      {/* <Effect /> */}
-      {/* <NavBar />
-      <Typing text={[
-        "SOFTWARE DEVELOPER",
-        "MERN STACK DEVELOPER"
-      ]}
-      typingSpeed ={100}
-      deletingSpeed = {50}
-      duration = {1000} />
-      <Tile 
-        header={"Class is going on"}
-        subHeader={"Class must go on"}
-        img={"https://cdn.dribbble.com/users/3484830/screenshots/16787618/media/b134e73ef667b926c76d8ce3f962dba2.gif"}
-        text={"HOLA AMIGO"}
-        link={"https://www.scaler.com/academy/mentee-dashboard/class/230122/session?joinSession=1"}
-        linkText={"Development_Class"}
-        position={"img-right"}
-        bgColor={"red"}
-      />
-      <Banner />
-      <ProgressBar 
-        percentage={percentage}
-      /> */}
 
-      
-
-
-    </div>
+    <CartContext.Provider value={{cart, increaseQuantity, decreaseQuantity}}>
+      <div className="App">
+        <Products/>        
+      </div>
+    </CartContext.Provider>
   );
 }
 
