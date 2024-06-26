@@ -1,6 +1,9 @@
 import ProductCard from "../ProductCard/ProductCard";
 import { useState,useEffect } from "react";
 import useWindowSize from "../../hooks/useWindowSize";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import Cart from "../Cart/Cart";
 
 function Products({cart, increaseQuantity, decreaseQuantity}){
     // const products = [
@@ -73,6 +76,7 @@ function Products({cart, increaseQuantity, decreaseQuantity}){
 
     return(
         <div>
+            <div><Cart /></div>
             {
                 products.map(function(item, index){
                     return(<ProductCard key={index}  product={item}  cart={cart} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity}/>)
