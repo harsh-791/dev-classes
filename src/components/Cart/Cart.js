@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 
 function Cart(){
-    const items = useSelector((state) => state.items);
+    const items = useSelector((state) => state.cart.items);
      return (
         <div>
             <h2>Shopping Cart</h2>
